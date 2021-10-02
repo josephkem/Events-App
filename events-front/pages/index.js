@@ -21,6 +21,6 @@ export async function getServerSideProps() {
   const events = await res.json();
 
   return {
-    props: { events },
+    props: { events: events.slice(0, 3) },
   };
 }
