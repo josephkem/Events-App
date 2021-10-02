@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import Link from "next/link";
 import { API_URL } from "@/config/index";
 import EventItem from "@/components/EventItem";
 
@@ -12,6 +13,12 @@ export default function Home({ events }) {
       {events.map((evt) => (
         <EventItem key={evt.id} evt={evt} />
       ))}
+
+      {events.length > 0 && (
+        <Link href="/events">
+          <a className="btn-secondary">View All Events</a>
+        </Link>
+      )}
     </Layout>
   );
 }
