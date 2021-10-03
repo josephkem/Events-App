@@ -1,3 +1,4 @@
+import moment from "moment";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "../../components/Layout";
@@ -105,7 +106,7 @@ export default function EditEventPage({ evt }) {
               type="date"
               name="date"
               id="date"
-              value={values.date}
+              value={moment(values.date).format("yyyy-MM-DD")}
               onChange={handleInputChange}
             />
           </div>
