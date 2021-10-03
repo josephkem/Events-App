@@ -1,7 +1,7 @@
 import moment from "moment";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Layout from "../../components/Layout";
+import Layout from "@/components/Layout";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -33,8 +33,8 @@ export default function EditEventPage({ evt }) {
       toast.error("Please fill in all fields");
     }
 
-    const res = await fetch(`${API_URL}/events`, {
-      method: "POST",
+    const res = await fetch(`${API_URL}/events/${evt.id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -54,7 +54,7 @@ export default function EditEventPage({ evt }) {
     setValues({ ...values, [name]: value });
   };
   return (
-    <Layout title="Add New Event">
+    <Layout title="Edit Event">
       <Link href="/events">Go Back</Link>
       <h1>Edit Event</h1>
       <ToastContainer />
