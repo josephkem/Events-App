@@ -23,6 +23,16 @@ export default function Header() {
               <a>Add Event</a>
             </Link>
           </li>
+          <li>
+            <Link href="/account/login">
+              <a>Login</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/account/register">
+              <a>Register</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
