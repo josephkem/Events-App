@@ -35,6 +35,4 @@ export default function Modal({ show, onClose, children, title }) {
   } else {
     return null;
   }
-
-  return <div></div>;
 }
