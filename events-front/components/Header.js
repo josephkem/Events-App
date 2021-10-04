@@ -35,6 +35,14 @@ export default function Header() {
                   <a>Dashboard</a>
                 </Link>
               </li>
+              <li>
+                <button
+                  onClick={() => logout()}
+                  className="btn-secondary btn-icon"
+                >
+                  <FaSignOutAlt /> Logout
+                </button>
+              </li>
             </>
           ) : (
             <>
@@ -49,12 +57,6 @@ export default function Header() {
               </li>
             </>
           )}
-
-          <li>
-            <Link href="/account/register">
-              <a className="btn-secondary btn-icon">Register</a>
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>
