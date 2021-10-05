@@ -10,34 +10,9 @@ import { API_URL } from "@/config/index";
 
 export default function EventPage({ evt }) {
   const router = useRouter();
-
-  const deleteEvent = async (e) => {
-    if (confirm("Are you sure you want to delete")) {
-      const res = await fetch(`${API_URL}/events/${evt.id}`, {
-        method: "DELETE",
-      });
-
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.message);
-      } else {
-        router.push("/events");
-      }
-    }
-  };
   return (
     <Layout>
       <div className={styles.event}>
-        <div className={styles.controls}>
-          <Link href={`/events/edit/${evt.id}`}>
-            <a href="">
-              <FaPencilAlt /> Edit Event
-            </a>
-          </Link>
-          <a href="#" className={styles.delete} onClick={deleteEvent}>
-            <FaTimes /> Delete Event
-          </a>
-        </div>
         <span>
           {new Date(evt.date).toLocaleDateString("en-US")} at {evt.time}
         </span>
